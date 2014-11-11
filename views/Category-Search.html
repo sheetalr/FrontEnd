@@ -1,0 +1,83 @@
+
+<div data-role="view" id="Categoryview" data-title="Category" data-layout="default">
+<div data-role="header">
+        <div style="color:black;" data-role="navbar">
+           Category
+             <a style="color:black;" data-align="left" data-role="backbutton" href="index.html">Back</a>
+        </div>
+    </div>
+    <div id="category">
+    <div class="demo-section k-header" style="padding: 1em;">
+        
+        <div id="grid1"></div>
+    </div>
+
+
+    <!-- jQuery JavaScript -->
+    <script src="kendo/js/jquery.min.js"></script>
+    <!-- Kendo UI combined JavaScript -->
+    <script src="kendo/js/kendo.all.min.js"></script>
+    <!-- Kendo UI console on screens JavaScript -->
+    <script src="kendo/js/console.js"></script>
+    <!-- Kendo UI custom JavaScript -->
+    <script src="everlive/min/everlive.all.min.js"></script>
+
+
+    <script>
+        var everlive = new Everlive({
+            apiKey: "IMregDJC77R1b1yM",
+            scheme: "http"
+        });
+
+        $(document).ready(function() {
+            // initialize Everlive application with application API key
+            var dataSource = new kendo.data.DataSource({
+                type: "everlive",
+                transport: {
+                    // binding to the Items type in Everlive
+                    typeName: "Category"
+                },
+                schema: {
+                    model: {
+                        id: "Id",
+                        fields: {
+                            
+                            CreatedBy:  { type: "string" },
+                            CreatedAt:  { type: "date" },
+                            ModifiedAt: { type: "date" },
+
+                            /*custom fields added*/
+                            CategoryName: { type: "string" }
+                          
+                        }
+                    }
+                },
+                serverPaging: true,
+                pageSize: 20,
+
+                serverSorting: true,
+                sort: { field: 'CreatedAt', dir: 'asc' }
+            });
+
+            $("#grid1").kendoGrid({
+                dataSource: dataSource,
+                height: 430,
+                sortable: true,
+                pageable: true,
+
+                columns: [
+                    {
+                        field: "CategoryName",
+                        width: 100
+                    }
+
+                ]
+            });
+        });
+    </script>
+    
+
+
+
+
+

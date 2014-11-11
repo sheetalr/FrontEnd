@@ -1,0 +1,53 @@
+<div data-role="view" id="signup" data-title="Register" data-layout="default" class="signup-view">
+    <div data-role="header">
+        <div style="color:black;" data-role="navbar">
+            Sign up
+            <a style="color:black;" class="nav-button nav-button-back hide-text" data-align="left" data-role="backbutton" href="index.html">Back</a>
+        </div>
+    </div>
+    <form id="signUp">
+        <ul id="signup-form" data-role="listview" data-style="inset">
+         <li style="background-color:#5490CC;color:white;">
+        Create an account
+     </li>
+     <li style="background-color:#5490CC;color:white;">
+        Do you really want to remember an another password?
+     </li>
+     <li style="color:black;">
+        <p><a href="www.facebook.com"></a>Sign up with facebook</p>
+     </li>
+     <li style="color:black;"><p>
+     <h3 data-align="center">Don't Worry,We will not do anything without asking you</h3>
+     </p></li>
+
+     <li style="background-color:#4EB848;color:white;">Sign Up</li>
+    <li style="background-color:#5490CC;color:white;">Or you can remember another password.:)</li>
+     <li><label style="color:black;">FirstName:
+                <input type="text" id="signupFName" data-bind="value: DisplayName" placeholder="FirstName" required/></label>
+            </li>
+            <li><label style="color:black;">LastName:
+                <input type="text" id="signupLName" data-bind="value: DisplayLName" placeholder="LastName" required/></label>
+            </li>
+            <li><label style="color:black;">Email_Id:
+                <input type="email" id="signupEmail" data-bind="value: Email" placeholder="Email"/></label>
+            </li>
+            <li><label style="color:black;">UserName:
+                <input type="text" id="signupUsername" data-bind="value: Username" placeholder="Username" required/></label>
+            </li>
+            <li><label style="color:black;">Password:
+                <input type="password" id="signupPassword" data-bind="value: Password" placeholder="Password" required/></label>
+            </li>
+            <li><label style="color:black;">Confirm:
+                <input type="password" id="signupCPassword" data-bind="value: CPassword" placeholder="Confirm Password" required/></label>
+            </li>
+           
+           <li style="text-align:center;display:block;"><label>Terms and Condition</label>
+                        <input checked type="checkbox" id="terms">
+                        </li>
+           
+        </ul>
+    </form>
+    <div style="background-color:#4EB848;color:white;text-align:center;" id="signupBtnWrp" class="signup-btn-wrp disabled">
+        <a class="btn btn-signup" data-role="button" href="views/Search-Screen.html">SignUp</a>
+    </div>
+</div>

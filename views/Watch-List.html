@@ -1,0 +1,95 @@
+<div data-role="view" id="Watchview" data-title="MyWatch" data-layout="default">
+<div data-role="header">
+        <div style="color:black;" data-role="navbar">
+            MyWatch
+             <a style="color:black;" class="nav-button nav-button-back hide-text" data-align="left" data-role="backbutton" href="Search-Screen.html">Back</a>
+        </div>
+    </div>
+    <div id="map1">
+    <div class="demo-section k-header" style="padding: 1em;">
+        
+        <div id="grid"></div>
+    </div>
+
+
+    <!-- jQuery JavaScript -->
+    <script src="kendo/js/jquery.min.js"></script>
+    <!-- Kendo UI combined JavaScript -->
+    <script src="kendo/js/kendo.all.min.js"></script>
+    <!-- Kendo UI console on screens JavaScript -->
+    <script src="kendo/js/console.js"></script>
+    <!-- Kendo UI custom JavaScript -->
+    <script src="scripts/lib/everlive.all.min.js"></script>
+
+
+    <script>
+        var everlive = new Everlive({
+            apiKey: "IMregDJC77R1b1yM",
+            scheme: "http"
+        });
+
+        $(document).ready(function() {
+            // initialize Everlive application with application API key
+            var dataSource = new kendo.data.DataSource({
+                type: "everlive",
+                transport: {
+                    // binding to the Items type in Everlive
+                    typeName: "Post"
+                },
+                schema: {
+                    model: {
+                        id: "Id",
+                        fields: {
+                            
+                            CreatedBy:  { type: "string" },
+                            CreatedAt:  { type: "date" },
+                            ModifiedAt: { type: "date" },
+
+                            /*custom fields added*/
+                            Title: { type: "string" },
+                            Description:  { type: "string" },
+                            Price:{ type: "number"},
+                            Picture:{type: "file"}
+                        }
+                    }
+                },
+                serverPaging: true,
+                pageSize: 20,
+
+                serverSorting: true,
+                sort: { field: 'Price', dir: 'asc' }
+            });
+
+            $("#grid").kendoGrid({
+                dataSource: dataSource,
+                height: 430,
+                sortable: true,
+                pageable: true,
+
+                columns: [
+                    {
+                        field: "Title",
+                        width: 100
+                    }, {
+                        field: "Description",
+                        title: "Description",
+                    },{
+                        field: "Price",
+                        title: "Price",
+                    },
+                    {
+                        field: "Picture",
+                        title: "Picture",
+                       template:"<img src ='#= Picture #'/>"
+                    }
+
+                ]
+            });
+        });
+    </script>
+    
+
+
+
+
+

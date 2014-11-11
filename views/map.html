@@ -1,0 +1,44 @@
+
+<div data-role="view" id="mapview" data-title="MAP" data-layout="default">
+<div data-role="header">
+        <div style="color:black;" data-role="navbar">
+            MAP
+            <a style="color:black;" class="nav-button nav-button-back hide-text" data-align="left" data-role="backbutton" href="#welcome">Back</a>
+        </div>
+    </div>
+    <div id="map1">
+    <div class="demo-section k-header" style="padding: 1em;">
+        <div id="map"></div>
+    </div>
+    
+    <script>
+        function createMap() {
+            $("#map").kendoMap({
+                center: [30.268107, -97.744821],
+                zoom: 15,
+                layers: [{
+                    type: "tile",
+                    urlTemplate: "http://#= subdomain #.tile2.opencyclemap.org/transport/#= zoom #/#= x #/#= y #.png",
+                    subdomains: ["a", "b", "c"],
+                    attribution: "&copy; <a href='http://osm.org/copyright'></a>." +
+                                 "<a href='http://www.opencyclemap.org/'>Click to open map</a>"
+              }, {
+                    type: "marker",
+                    dataSource: {
+                        transport: {
+                            read: {
+                                url: "../content/dataviz/map/store-locations.json",
+                                dataType: "json"
+                            }
+                        }
+                    },
+                    locationField: "latlng",
+                    titleField: "name"
+                }]
+            });
+        }
+
+        $(document).ready(createMap);
+    </script>
+</div>
+</div>

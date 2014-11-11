@@ -1,0 +1,65 @@
+        <!--search-screen-->
+        <html>
+        <head>
+         <title>Refine-Search</title>
+         <meta charset="utf-8" />
+         
+         <!-- Common Kendo UI CSS -->
+         <link href="kendo/styles/kendo.common.min.css" rel="stylesheet"/>
+
+         <!-- Default Kendo UI theme CSS -->
+         <link href="kendo/styles/kendo.default.min.css" rel="stylesheet"/>
+         <!-- Mobile Kendo min CSS -->
+         <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet"/>
+         <!-- Awesomefont CSS -->
+         <link href="kendo/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+         <!-- (optional) Kendo UI DataViz CSS, include only if you will use the data visualisation features -->
+         <link href="kendo/styles/kendo.dataviz.min.css" rel="stylesheet"/>
+         <link href="kendo/styles/kendo.dataviz.default.min.css" rel="stylesheet"/>
+
+         
+         <!-- jQuery JavaScript -->
+         <script src="kendo/js/jquery.min.js"></script>
+
+         <!-- Kendo UI combined JavaScript -->
+         <script src="kendo/js/kendo.all.min.js"></script>
+         <!-- Kendo UI console on screens JavaScript -->
+         <script src="kendo/js/console.js"></script>
+
+         <!--mobile kendo javascript-->
+         <script src="kendo/js/kendo.mobile.min.js"></script>
+         
+         <script src="everlive/min/everlive.all.min.js"></script>
+     </head>
+     <body>
+        <div id="RefineSearch-screen" data-role="view" data-title="Your watch" data-layout="default">   
+            <header data-role="header">
+                
+                <a data-role="backbutton" class="bck-btn-signup">back</a>
+                
+            </header>  
+            <ul id="refineSearchListView" data-role="listview" data-style="inset" data-type="group">
+
+             
+                <li style="background-color:#5490CC;color:white;">
+                    Select options
+                    <ul>
+                        <li style="color:black;"><a>Type</a></li>
+                        <li style="color:black;"><a href="Location-Search.html">Location</a></li>
+                        <li style="color:black;"><a href="Category-Search.html">Category</a></li>
+                        <li style="background-color:#4EB848;color:white;">
+                            <a href="Watch-List.html" data-align="right">Search</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;
+                            
+
+                            <a href="views/Search-Screen.html" data-align="left">Reset</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </body>
+    </html>

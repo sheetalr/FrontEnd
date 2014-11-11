@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+       <meta charset="utf-8" />
+       
+        <!-- Common Kendo UI CSS -->
+        <link href="kendo/styles/kendo.common.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Default Kendo UI theme CSS -->
+        <link href="kendo/styles/kendo.default.min.css" rel="stylesheet" />
+        <!-- Kendo UI CSS -->
+        <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+        <!-- Awesomefont CSS -->
+        <link href="kendo/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+       
+        <!-- jQuery JavaScript -->
+        <script src="kendo/js/jquery.min.js"></script>
+        <!-- Kendo UI web Javascripts -->
+        <script src="kendo/js/kendo.web.min.js"></script>
+
+        <!-- Kendo UI combined JavaScript -->
+        <script src="kendo/js/kendo.all.min.js"></script>
+        <!--mobile kendo javascript-->
+        <script src="kendo/js/kendo.mobile.min.js"></script>
+        <!-- Angularjs JavaScript -->
+        <script src="kendo/js/angular.min.js"></script>
+        <!-- backend connectivity JavaScript -->
+        <script src="scripts/lib/everlive.all.min.js"></script>
+       
+        <script src="scripts/app/settings.js" type="text/javascript"></script>
+        <script src="scripts/app/app.js" type="text/javascript"></script>
+       
+        <!-- AUTOCOMPLETE -->
+        <script>
+                $(document).ready(function () {
+                    var data = [
+                            "Albania",
+                            "Andorra",
+                            "Armenia",
+                            "Austria",
+                            "Azerbaijan",
+                            "Belarus",
+                            "Belgium",
+                            "Bosnia & Herzegovina",
+                            "Bulgaria",
+                            "Croatia",
+                            "Cyprus",
+                            "Czech Republic",
+                            "Denmark",
+                            "Estonia",
+                            "Finland",
+                            "France",
+                            "Georgia",
+                            "Germany",
+                            "Greece",
+                            "Hungary",
+                            "Iceland",
+                            "Ireland",
+                            "Italy",
+                            "Kosovo",
+                            "Latvia",
+                            "Liechtenstein",
+                            "Lithuania",
+                            "Luxembourg",
+                            "Macedonia",
+                            "Malta",
+                            "Moldova",
+                            "Monaco",
+                            "Montenegro",
+                            "Netherlands",
+                            "Norway",
+                            "Poland",
+                            "Portugal",
+                            "Romania",
+                            "Russia",
+                            "San Marino",
+                            "Serbia",
+                            "Slovakia",
+                            "Slovenia",
+                            "Spain",
+                            "Sweden",
+                            "Switzerland",
+                            "Turkey",
+                            "Ukraine",
+                            "United Kingdom",
+                            "Vatican City"
+                        ];
+
+                    //create AutoComplete UI component
+                    $("#countries").kendoAutoComplete({
+                        dataSource: data,
+                        filter: "startswith",
+                        placeholder: "Select country...",
+                        separator: ", "
+                    });
+                });
+            </script>
+       
+        <link href="styles/main.css" rel="stylesheet" />
+    </head>
+    <body id="SplitDeal">
+      <div data-role="layout" data-id="default">
+            <!--View content will render here-->
+        </div>
+        <!--WELCOME VIEW -->
+        <div data-role="view" id="welcome" data-layout="default" class="welcome-scrn form-view">
+
+        <!-- header -->
+            <div data-role="header">
+                <div data-role="navbar">       
+               
+                   <!-- search Text Box with OnClick functionality -->
+                    <input id="countries" style="height:30px;width:90%;border:1px solidblack;flex-wrap:wrap;" type="search" placeholder="Search" data-icon="search"/>
+                   
+
+
+                    <!-- barcode image with scanninf functionality -->
+                      <a style="color:black;" href="barcode.html" data-align="right"><i class="fa fa-barcode fa-3x"></i><br/></a>
+                      
+                </div>
+            </div>
+           <!-- Form View -->
+            <form id="login-form">
+                <ul data-role="listview" data-style="inset">
+                <li style="background-color:#5490CC;color:white;">Log IN
+                </li>
+                <!-- UserName TextBox with validation  -->
+                    <li class="username"><label style="color:black;">UserName:<input type="text" id="loginUsername" placeholder="Username" required validationMessage="Username is required!" /></label></li>
+                    <!-- Passowrd TextBox with validation -->
+                    <li class="password"><label style="color:black;">Password:<input type="password" id="loginPassword" placeholder="Password" required validationMessage="Password is required!" /></label></li>
+                </ul>
+            </form>
+            <!-- On-order list for Login-->
+            <ol class="group-wrp">
+            <!-- OnClick data event for login by calling login funtion from login.js -->
+                <li style="background-color:#4EB848;color:white;text-align:center;display: block;">
+                                <span id="login" data-role="touch">
+                                    <a data-role="button" href="views/Watch-List.html" class="btn btn-login">Sign IN</a>
+                                </span>
+                            </li>
+               
+                <li style="color:black;display: block;">Don't have an account?
+                </li>
+    <li style="background-color:#4EB848;color:white;text-align:center;display: block;" class="signup">
+             <a data-role="button" href="views/signupView.html" class="btn-signup">Sign UP</a>
+    </li>
+            </ol>
+
+                <!-- footer -->
+           <div data-role="footer">
+                        <!-- tabstrip -->
+                            <div data-role="tabstrip">
+                                <a style="color:black;" href="index.html" data-icon="search">Home</a>
+
+                                 <a style="color:black;" href="index.html"><i style="color:black;" class="fa fa-map-marker fa-3x"></i><br/>Post</a>
+                                <a style="color:black;" href="views/map.html"><i style="color:black;" class="fa fa-location-arrow fa-3x"></i><br/>Near Me</a>
+                                <a style="color:black;" href="#favorite-screen"><i style="color:black;" class="fa fa-star-o fa-3x"></i><br/>favorite</a>
+                                <a style="color:black;" href="views/Refine-Search.html" data-icon="settings">Setting</a>
+                            </div>
+                        </div>
+        </div>
+     
+    </body>
+</html>
