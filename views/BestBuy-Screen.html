@@ -1,0 +1,63 @@
+  <!--BestBuy-screen-->
+      <div id="BestBuy-screen" data-role="view" data-title="Post?">   
+                 <header data-role="header">
+                 <div data-role="navbar">
+                 Best Buy
+                  <a data-role="backbutton" data-align="left" class="bck-btn-search">back</a>
+                  </div>
+                  </header> 
+          <ul id="bestBuyListView" data-role="listview" data-style="inset" data-type="group">
+            
+              <li style="background-color:#5490CC;color:white;">
+                  What's on sale?
+                  <ul>
+                      
+                      <li style="color:black;">
+                      <label>Title
+                          <input type="text" id="PostTitle"/>
+                      </label>
+                      </li>
+                       <li style="color:black;"><a>Category</a></li>
+                        <li style="color:black;">
+                      <label>Description
+                          <input type="text" id="PostTitle"/>
+                      </label>
+                      </li>
+                      <li style="color:black;">
+                          <a>Sale End Date </a>
+                          <input id="PostDate"/>
+                         
+                      </li>
+                      <li style="color:black;">
+                      <label>Keyword
+                          <input type="text" id="PostTitle"/>
+                      </label>
+                      </li>
+
+                      <li style="color:black;"><a>Attach a photo</a></li>
+                  </ul>
+              </li>
+              <li style="text-align:center;display:block;">
+              <a data-role="button" data-rel="actionsheet" href="#postingActionSheet">POST</a></li>
+         <ul data-role="actionsheet" id="postingActionSheet">
+             <li><a href="http://www.facebook.com/">FaceBook</a></li>
+             <li><a data-action="foo">Google+</a></li>
+             <li><a data-action="bar">Twitter</a></li>
+             <li><a data-action="foo">Email</a></li>
+             <li><a data-action="bar">Copylink</a></li>
+         </ul>
+          </ul>
+              <!-- footer -->
+             <div data-role="footer">
+                          <!-- tabstrip -->
+                              <div data-role="tabstrip">
+                                  <a style="color:black;" href="index.html" data-icon="search">Home</a>
+
+                                   <a style="color:black;" href="views/Post-Option-Sreen.html"><i style="color:black;" class="fa fa-map-marker fa-3x"></i><br/>Post</a>
+                                  <a style="color:black;" href="views/map.html"><i style="color:black;" class="fa fa-location-arrow fa-3x"></i><br/>Near Me</a>
+                                  <a style="color:black;" href="views/Favorite-Screen.html"><i style="color:black;" class="fa fa-star-o fa-3x"></i><br/>favorite</a>
+                                  <a style="color:black;" href="views/Refine-Search.html" data-icon="settings">Setting</a>
+                              </div>
+                          </div>
+          </div>
+      </div>
